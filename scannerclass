@@ -1,0 +1,75 @@
+package com.tnsif.scannerclass;
+// finding the tax of the person
+public class Person {
+	
+private String name;  // varibales
+private int income;
+private int tax;
+
+//getter and setter 
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public int getIncome() {
+	return income;
+}
+public void setIncome(int income) {
+	this.income = income;
+}
+public int getTax() {
+	return tax;
+}
+public void setTax(int tax) {
+	this.tax = tax;
+}
+
+// to string
+@Override
+public String toString() {
+	return "Person [name=" + name + ", income=" + income + ", tax=" + tax + "]";
+}
+
+
+}
+package com.tnsif.scannerclass;
+
+public class Taxcalculation {
+public void CalculateTax(Person p) {
+	if(p.getIncome()<15000) {
+		p.setTax(0);
+	}
+	else if(p.getIncome()<=15000&&p.getIncome()<50000) {
+		p.setTax(5);
+	}
+	else {
+		p.setTax(10);
+	}
+}
+}
+package com.tnsif.scannerclassdemo;
+
+import java.util.Scanner;
+
+public class mainmethod {
+public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter the person name");
+	String name=sc.next();
+	System.out.println("enter the income");
+	int income=sc.nextInt();
+	
+	Person pp=new Person();
+	pp.setName(name);
+	pp.setIncome(income);
+	
+	Taxcalculation t=new Taxcalculation();
+	t.CalculateTax(pp);
+	
+	System.out.println("after tax calculation");
+	
+	System.out.println(pp);
+}
+}
