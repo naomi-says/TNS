@@ -1,0 +1,89 @@
+package com.tnsif.constrctordemo;
+// demo for constructor 
+public class ConExample {
+	
+	ConExample(){// constructor
+	System.out.println("default con");	
+	}
+	ConExample(int a,String b){
+		System.out.println("2 parameter");
+	}
+	ConExample(int r){
+		System.out.println("1 para");
+	}
+	ConExample(int s, int b,int d){
+		System.out.println("3 para");
+	}
+	public static void main(String[] args) {
+		ConExample c=new ConExample();
+		ConExample c1=new ConExample(1,"rashmi");
+		ConExample c2=new ConExample(9);
+		ConExample c3=new ConExample(6,"yashwanth");
+	}
+}
+package com.tnsif.constrctordemo;
+
+public class Customer {
+	
+private String Customername;
+private String Customeraddress;
+private int customerid;
+
+
+public String getCustomername() {
+	return Customername;
+}
+public void setCustomername(String customername) {
+	Customername = customername;
+}
+public String getCustomeraddress() {
+	return Customeraddress;
+}
+public void setCustomeraddress(String customeraddress) {
+	Customeraddress = customeraddress;
+}
+public int getCustomerid() {
+	return customerid;
+}
+public void setCustomerid(int customerid) {
+	this.customerid = customerid;
+}
+
+@Override
+public String toString() {
+	return "Customer [Customername=" + Customername + ", Customeraddress=" + Customeraddress + ", customerid="
+			+ customerid + "]";
+}
+
+
+
+}
+package com.tnsif.constrctordemo;
+
+import java.util.Scanner;
+
+public class Customermain {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		System.out.println("enter the name");
+		String name=sc.next();
+		
+		System.out.println("enter the address");
+		String address=sc.next();
+		
+		System.out.println("enter the id");
+		int id=sc.nextInt();
+		
+		Customer c=new Customer();
+		c.setCustomername(name);
+		c.setCustomeraddress(address);
+		c.setCustomerid(id);
+		
+		System.out.println(c);
+		
+		
+		
+	}
+
+}
